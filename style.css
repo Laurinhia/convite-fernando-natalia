@@ -1,0 +1,206 @@
+:root {
+  --bege: #fdf7f2;
+  --azul: #0d2a49;
+  --dourado: #b58a5a;
+}
+
+/* Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Playfair Display', serif;
+  background: var(--bege);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Tela inicial */
+#envelope {
+  text-align: center;
+  padding: 40px;
+  animation: aparecer 1.2s ease forwards;
+}
+
+.intro {
+  position: relative;
+}
+
+.aliancas {
+  width: 140px;
+  margin-bottom: 20px;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+.frase {
+  font-family: 'Great Vibes', cursive;
+  font-size: 30px;
+  color: var(--azul);
+  margin: 12px 0;
+}
+
+.clique {
+  font-style: italic;
+  color: var(--azul);
+  margin: 10px 0;
+}
+
+.abrir {
+  background: var(--dourado);
+  color: #fff;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.abrir:hover {
+  background: var(--azul);
+  transform: scale(1.05);
+}
+
+/* Convite */
+.hidden { display: none; }
+
+#convite {
+  text-align: center;
+  padding: 20px;
+}
+
+.card {
+  position: relative;
+  background: var(--bege) url("flores.png") no-repeat center;
+  background-size: cover;
+  border: 2px solid var(--dourado);
+  padding: 45px 35px;
+  border-radius: 25px;
+  max-width: 500px;
+  margin: auto;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  animation: aparecer 1s ease forwards;
+  overflow: hidden;
+}
+
+.top-text {
+  font-size: 16px;
+  color: var(--azul);
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  color: var(--dourado);
+  margin: 15px 0;
+}
+
+h1 span { color: var(--azul); }
+
+.sub {
+  font-size: 15px;
+  color: var(--azul);
+  margin: 15px 0;
+}
+
+.data {
+  font-size: 20px;
+  color: var(--dourado);
+  font-weight: bold;
+  border-top: 1px solid var(--dourado);
+  border-bottom: 1px solid var(--dourado);
+  padding: 14px 0;
+  margin: 20px 0;
+}
+
+.local {
+  font-size: 15px;
+  color: var(--azul);
+  margin: 15px 0;
+}
+
+.versiculo {
+  font-style: italic;
+  font-size: 15px;
+  color: var(--azul);
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+.rsvp {
+  background: var(--azul);
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.rsvp:hover {
+  background: var(--dourado);
+  transform: scale(1.05);
+}
+
+/* Flores caindo */
+.flores {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: url('img/flor-caindo.png');
+  background-repeat: repeat;
+  background-size: 30px;
+  animation: cair 15s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes cair {
+  0% { background-position: 0 -50px; }
+  100% { background-position: 0 800px; }
+}
+
+/* Brilho nas alianças */
+.sparkle {
+  position: absolute;
+  top: 0; left: 50%;
+  width: 140px; height: 140px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  box-shadow: 0 0 40px 15px rgba(255, 223, 0, 0.6);
+  animation: brilhar 2s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+@keyframes brilhar {
+  0% { box-shadow: 0 0 20px 5px rgba(255, 223, 0, 0.4); }
+  100% { box-shadow: 0 0 50px 25px rgba(255, 223, 0, 0.8); }
+}
+
+/* Animação */
+@keyframes aparecer {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsivo */
+@media (max-width: 520px) {
+  .card { max-width: 95%; padding: 25px 20px; }
+  h1 { font-size: 38px; }
+  .frase { font-size: 24px; }
+  .aliancas { width: 110px; }
+  .sparkle { width: 110px; height: 110px; }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convite de Casamento</title>
+
+  <!-- Fontes elegantes -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Tela inicial com alianças -->
+  <div id="envelope">
+    <div class="intro">
+      <img src="aliança.png" class="aliancas" alt="Alianças Douradas">
+      <h2 class="frase">Duas almas, um só coração</h2>
+      <p class="clique">Clique para abrir o convite</p>
+      <button class="abrir" onclick="abrirConvite()">Abrir Convite</button>
+    </div>
+  </div>
+
+  <!-- Convite completo -->
+  <div id="convite" class="hidden">
+    <div class="card">
+      <h3 class="top-text">Com alegria e bênção de Deus, convidamos você para celebrar nossa união</h3>
+      <h1>Fernando <span>&</span> Natália</h1>
+      <p class="sub">Nossos pais, com carinho, abençoam este amor que floresce</p>
+
+      <div class="data">20 de Setembro de 2025</div>
+      <p class="local">Recinto de Leilão, <br>Salto das Orquídeas</p>
+
+      <p class="detalhes">Após a cerimônia, teremos o prazer de receber você para a recepção e festa, celebrando este novo capítulo de nossas vidas, cheio de amor, risos e memórias inesquecíveis.</p>
+
+      <button class="rsvp" onclick="confirmar()">Confirmar Presença</button>
+    </div>
+  </div>
+
+  <!-- JS externo -->
+  <script src="script.js"></script>
+</body>
+</html>
